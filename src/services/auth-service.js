@@ -19,8 +19,10 @@ const authenticateUser = async (username, password) => {
         if (user === null) {
             throw new Error('invalid username');
         } else {
+            // todo: compare hashed passwords
             if (user.password === password) {
                 // generate jwt with users mongo object id in the payload
+                // todo: give the jwt a life time
                 const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET || 'secret');
                 return token
             } else {

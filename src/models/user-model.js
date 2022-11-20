@@ -21,6 +21,8 @@ const userSchema = new mongoose.Schema({
 
 
 userSchema.post('save', (error, document, next) => {
+    // todo: write code to hash and salt passwords
+    
     // handle all unique key violations
     if (error.name === 'MongoServerError' && error.code === 11000) {
         const violatedKey = error.message.split(':')[3].substring(2).trim();
