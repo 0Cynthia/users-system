@@ -1,0 +1,42 @@
+##############################################################################################
+## HTTP requests for the student API                                                        ##
+## all endpoints required an jwt token in the authorization header                          ##
+## all endpoints can only be accessed by a user with the adminsitrator role                 ##
+## a vscode extension called REST client by Hauchao Mao is required to send these requests  ##
+## or you can use a standalone application like postman or insomnia :)                      ##
+##############################################################################################
+
+### this endpoints return an array of student objects ###
+GET http://localhost:3000/api/users/students HTTP/1.1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzc5NmM3OTEzNWNmNGE5YzhkMzhkMjciLCJpYXQiOjE2Njg5NDY3MTF9.jtTIOfIssWCSyo2CmtXodsdpGj3tfmFTbYGhYJ2NQXw
+
+### this endpoint returns a student object specified by an id  ###
+GET http://localhost:3000/api/users/students/63790734cc27efa0471bf742 HTTP/1.1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzc5NmM3OTEzNWNmNGE5YzhkMzhkMjciLCJpYXQiOjE2Njg5NDY3MTF9.jtTIOfIssWCSyo2CmtXodsdpGj3tfmFTbYGhYJ2NQXw
+
+### this endpoint creates & returns a student object  ###
+POST http://localhost:3000/api/users/students HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzc5NmM3OTEzNWNmNGE5YzhkMzhkMjciLCJpYXQiOjE2Njg5NDY3MTF9.jtTIOfIssWCSyo2CmtXodsdpGj3tfmFTbYGhYJ2NQXw
+
+{
+    "username": "Refaat",
+    "password": "Refaat",
+    "studentId": "1"
+}
+
+### this endpoint updates and returns a user object ###
+PUT http://localhost:3000/api/users/students/637955db4b544d69f2964845 HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzc5NmM3OTEzNWNmNGE5YzhkMzhkMjciLCJpYXQiOjE2Njg5NDY3MTF9.jtTIOfIssWCSyo2CmtXodsdpGj3tfmFTbYGhYJ2NQXw
+
+{
+    "username": "New Refaat",
+    "password": "Refaat",
+    "studentId": "1"
+}
+
+### this endpoint deletes and returns a user object ###
+DELETE http://localhost:3000/api/users/students/637955db4b544d69f2964845 HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzc5NmM3OTEzNWNmNGE5YzhkMzhkMjciLCJpYXQiOjE2Njg5NDY3MTF9.jtTIOfIssWCSyo2CmtXodsdpGj3tfmFTbYGhYJ2NQXw
