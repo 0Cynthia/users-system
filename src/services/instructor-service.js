@@ -8,7 +8,6 @@ const { hash } = require('../utility/hash');
 /**
  * this service queries the database for an array of instructor objects
  * @returns an array of instructor objects
- * todo: pagination
  */
 const getAllInstructors = async () => {
     try {

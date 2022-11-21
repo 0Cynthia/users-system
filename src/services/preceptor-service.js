@@ -8,7 +8,6 @@ const { hash } = require('../utility/hash');
 /**
  * this service queries the database for an array of preceptor objects
  * @returns an array of preceptor objects
- * todo: pagination
  */
 const getAllPreceptors = async () => {
     try {

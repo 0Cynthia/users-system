@@ -8,7 +8,6 @@ const { hash } = require('../utility/hash');
 /**
  * this service queries the database for an array of administrator objects
  * @returns an array of administrator objects
- * todo: pagination
  */
 const getAllAdministrators = async () => {
     try {
