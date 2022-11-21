@@ -1,6 +1,6 @@
 /**
  * author: Refaat
- * this module exports a Student model
+ * this module defines a Student schema & exports a Student model
  * Students *are* expicitly created
  * this model inherits from the User model and add's
  * attributes that are specific to a Student 

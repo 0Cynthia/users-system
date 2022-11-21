@@ -3,6 +3,7 @@
  * this module exports service functions for the instructor resource
  */
 const Instructor = require('../models/instructor-model');
+const { hash } = require('../utility/hash');
 
 /**
  * this service queries the database for an array of instructor objects
@@ -46,6 +47,9 @@ const getInstructorById = async (_id) => {
  */
 const createInstructor = async (instructor) => {
     try {
+        // hash password before saving
+        instructor.password = hash(instructor.password);
+
         // create & return an instructor
         const newInstructor = await Instructor.create(instructor);
         return newInstructor;
@@ -62,6 +66,9 @@ const createInstructor = async (instructor) => {
  */
 const updateInstructor = async (_id, instructor) => {
     try {
+        // hash password before saving. does not matter if it is the same password or not
+        instructor.password = hash(instructor.password);
+
         // update & return an existing instructor
         const oldInstructor = await Instructor.findOneAndUpdate({ _id }, instructor);
 

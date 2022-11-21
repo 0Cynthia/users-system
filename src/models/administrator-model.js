@@ -1,6 +1,6 @@
 /**
  * author: Refaat
- * this module exports an Administrator model
+ * this module defines an administrator schema & exports an Administrator model
  * Administrators *are* expicitly created
  * this model inherits from the User model and add's
  * attributes that are specific to an Administrator 

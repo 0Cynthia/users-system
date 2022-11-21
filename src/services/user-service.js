@@ -61,7 +61,6 @@ const getUserByUsername = async (username) => {
     }
 }
 
-
 /**
  * this service returns a user object from a jwt
  * @param {String} token a json-web-token

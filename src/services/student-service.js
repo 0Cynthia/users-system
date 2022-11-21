@@ -3,6 +3,7 @@
  * this module exports service functions for the student resource
  */
 const Student = require('../models/student-model');
+const { hash } = require('../utility/hash');
 
 /**
  * this service queries the database for an array of student objects
@@ -47,6 +48,9 @@ const getStudentById = async (_id) => {
  */
 const createStudent = async (student) => {
     try {
+        // hash password before saving
+        student.password = hash(student.password);
+
         // create and return a new student to the db
         const newStudent = await Student.create(student);
         return newStudent;
@@ -63,8 +67,12 @@ const createStudent = async (student) => {
  */
 const updateStudent = async (_id, student) => {
     try {
+        // hash password before saving. does not matter if it is the same password or not
+        student.password = hash(student.password);
+
         // update & return an existing student from the db
         const oldStudent = await Student.findOneAndUpdate({ _id }, student)
+
 
         // throw an error if it does not exist
         if (oldStudent === null) {

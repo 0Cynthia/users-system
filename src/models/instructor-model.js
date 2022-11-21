@@ -1,6 +1,6 @@
 /**
  * author: Refaat
- * this module exports a Instructor model
+ * this module defines an instructor schema & exports a Instructor model
  * Instructors *are* expicitly created
  * this model inherits from the User model and add's
  * attributes that are specific to a Instructor 

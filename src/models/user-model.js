@@ -1,6 +1,6 @@
 /**
  * author: Refaat
- * this module exports a User model
+ * this module defines a User schema & exports a User model
  * a User is never expicitly created; its the parent for more specific users,
  * that will use this application
  */
@@ -20,12 +20,10 @@ const userSchema = new mongoose.Schema({
 });
 
 
-userSchema.post('save', (error, document, next) => {
-    // todo: write code to hash and salt passwords
-    
-    // handle all unique key violations
+// handle all unique key violations
+userSchema.post('save', (error, document, next) => {    
     if (error.name === 'MongoServerError' && error.code === 11000) {
-        const violatedKey = error.message.split(':')[3].substring(2).trim();
+        const violatedKey = error.message.split(':')[3].substring(2).trim(); // 🐸
         console.log(violatedKey);
         next(new Error(`${violatedKey} must be unique!`));
     } else {
@@ -33,7 +31,6 @@ userSchema.post('save', (error, document, next) => {
     }
 });
 
+// export a User model
 const User = mongoose.model('User', userSchema);
-
-
 module.exports = User;

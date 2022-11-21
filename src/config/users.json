@@ -1,0 +1,58 @@
+[
+    {
+        "studentId": "1",
+        "username": "Sunny",
+        "password": "$2b$12$y1x6XuYcBi.Wh.pNpJWkQuPIZfiXgR/atGyabvZJbTYu5yOsPw60y",
+        "__t": "Student",
+        "__v": 0
+    },
+    {
+        "studentId": "2",
+        "username": "Basil",
+        "password": "$2b$12$y1x6XuYcBi.Wh.pNpJWkQuPIZfiXgR/atGyabvZJbTYu5yOsPw60y",
+        "__t": "Student",
+        "__v": 0
+    },
+    {
+        "studentId": "3",
+        "username": "Kel",
+        "password": "$2b$12$y1x6XuYcBi.Wh.pNpJWkQuPIZfiXgR/atGyabvZJbTYu5yOsPw60y",
+        "__t": "Student",
+        "__v": 0
+    },
+    {
+        "studentId": "4",
+        "username": "Aubrey",
+        "password": "$2b$12$y1x6XuYcBi.Wh.pNpJWkQuPIZfiXgR/atGyabvZJbTYu5yOsPw60y",
+        "__t": "Student",
+        "__v": 0
+    },
+    {
+        "instructorId": "1",
+        "username": "Hero",
+        "password": "$2b$12$y1x6XuYcBi.Wh.pNpJWkQuPIZfiXgR/atGyabvZJbTYu5yOsPw60y",
+        "__t": "Instructor",
+        "__v": 0
+    },
+    {
+        "instructorId": "2",
+        "username": "Mari",
+        "password": "$2b$12$y1x6XuYcBi.Wh.pNpJWkQuPIZfiXgR/atGyabvZJbTYu5yOsPw60y",
+        "__t": "Instructor",
+        "__v": 0
+    },
+    {
+        "preceptorId": "1",
+        "username": "Blahaj",
+        "password": "$2b$12$y1x6XuYcBi.Wh.pNpJWkQuPIZfiXgR/atGyabvZJbTYu5yOsPw60y",
+        "__t": "Preceptor",
+        "__v": 0
+    },
+    {
+        "administratorId": "1",
+        "username": "Omori",
+        "password": "$2b$12$y1x6XuYcBi.Wh.pNpJWkQuPIZfiXgR/atGyabvZJbTYu5yOsPw60y",
+        "__t": "Administrator",
+        "__v": 0
+    }
+]

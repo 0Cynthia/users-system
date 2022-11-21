@@ -1,6 +1,6 @@
 /**
  * author: Refaat
- * this module exports a Preceptor model
+ * this module defines a Preceptor schema & exports a Preceptor model
  * Preceptor *are* expicitly created
  * this model inherits from the User model and add's
  * attributes that are specific to a Preceptor 

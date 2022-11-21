@@ -8,6 +8,8 @@
 
 ### this endpoints return an array of administrator objects ###
 GET http://localhost:3000/api/users/administrators HTTP/1.1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzdiOGE4NmU1ODBiNDlkYWFjZTM0MjEiLCJpYXQiOjE2NjkwNDA4MzcsImV4cCI6MTY2OTA0NDQzN30.tYt-xDCQM6ijqqvMCBAGCC28xd8THVVswxf2cgSrzzw
+
 
 ### this endpoints return a administrator object specified by an id ###
 GET http://localhost:3000/api/users/administrators/:id HTTP/1.1

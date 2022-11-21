@@ -3,6 +3,7 @@
  * this module exports service functions for the administrator resource
  */
 const Administrator = require('../models/administrator-model');
+const { hash } = require('../utility/hash');
 
 /**
  * this service queries the database for an array of administrator objects
@@ -47,6 +48,9 @@ const getAdministratorById = async (_id) => {
  */
 const createAdministrator = async (administrator) => {
     try {
+        // hash password before saving
+        administrator.password = hash(administrator.password);
+
         // create & return an administrator
         const newAdministrator = await Administrator.create(administrator);
         return newAdministrator;
@@ -63,6 +67,9 @@ const createAdministrator = async (administrator) => {
  */
 const updateAdministrator = async (_id, administrator) => {
     try {
+        // hash password before saving. does not matter if it is the same password or not
+        administrator.password = hash(administrator.password);
+
         // update & return an existing administrator
         const oldAdministrator = await Administrator.findOneAndUpdate({ _id }, administrator);
 
@@ -91,7 +98,7 @@ const deleteAdministrator = async (_id) => {
         if (deletedAdministrator === null) {
             throw new Error(`${_id} does not exist!`);
         }
-        
+
         return deletedAdministrator;
     } catch (error) {
         throw error;

@@ -3,6 +3,7 @@
  * this module exports service functions for the preceptor resource
  */
 const Preceptor = require('../models/preceptor-model');
+const { hash } = require('../utility/hash');
 
 /**
  * this service queries the database for an array of preceptor objects
@@ -47,6 +48,9 @@ const getPreceptorById = async (_id) => {
  */
 const createPreceptor = async (preceptor) => {
     try {
+        // hash password before saving
+        preceptor.password = hash(preceptor.password);
+
         // create & return a preceptor
         const newPreceptor = await Preceptor.create(preceptor);
         return newPreceptor;
@@ -63,6 +67,9 @@ const createPreceptor = async (preceptor) => {
  */
 const updatePreceptor = async (_id, preceptor) => {
     try {
+        // hash password before saving. does not matter if it is the same password or not
+        preceptor.password = hash(preceptor.password);
+
         // update & return an existing preceptor
         const oldPreceptor = await Preceptor.findOneAndUpdate({ _id }, preceptor);
 
