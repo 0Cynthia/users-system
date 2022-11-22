@@ -21,6 +21,7 @@ the repository implements:
 4. set MONGODB_URI to your mongodb connection uri
 5. import users.json to the database (/src/config/users.json)
 
+**note: all users in the users.json use "Password" as the password**  
 how to import json to mongodb: https://www.mongodb.com/docs/compass/current/import-export/
 
 ```
@@ -37,5 +38,5 @@ MONGODB_URI="mongodb://localhost:27017/yourdatabase"
 2. run node .\index.js
 
 ```
-C:/Users/Refaat/Desktop/api/src> node .\index.js
+C:/Users/Refaat/Desktop/users-system/src> node .\index.js
 ```
