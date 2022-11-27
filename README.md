@@ -2,8 +2,7 @@
 **author:** Refaat🌻  
 
 ### about ###
-this repository contains a users api that allows authenticated & authorized users to preform CRUD operations against the user models.  
-this repository was built in node.js & express.js, using mongo as a database; and it implements:    
+this repository contains a users api that allows authenticated & authorized users to preform CRUD operations against the user models. this repository was built in node.js & express.js, using mongo as a database; and it implements:    
 - json-web-token authentication
 - role based authorization
 - models utilitizing mongoose discriminators
