@@ -2,13 +2,13 @@
 **author:** Refaat🌻  
 
 ### about ###
-this repository contains a users api that allows authenticated & authorized users to preform CRUD operations against the user models (Students, Instructors, Preceptors, and Administrators). this repository was built in node.js & express.js, using mongo as a database.  
+this repository contains a users api that allows authenticated & authorized users to preform CRUD operations against the user models (Students, Instructors, Preceptors, & Administrators).  
+this repository was built in node.js & express.js, using mongo as a database.  
 the repository implements:  
 - json-web-token authentication
 - role based authorization
 - models utilitizing mongoose discriminators
-- hasing & salting passwords
-- protecting endpoints with authentication & authorization middleware
+- hashing & salting passwords
 
 ### prerequisites ###
 1. node.js must be installed
@@ -36,7 +36,6 @@ MONGODB_URI="mongodb://localhost:27017/yourdatabase"
 **run instructions**
 1. change to the src directory
 2. run node .\index.js
-
 ```
 C:/Users/Refaat/Desktop/users-system/src> node .\index.js
 ```
