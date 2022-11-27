@@ -2,7 +2,7 @@
 **author:** Refaat🌻  
 
 ### about ###
-this repository is contains a users api that allows authenticated & authorized users to preform CRUD operations against the user models (Students, Instructors, Preceptors, and Administrators). this repository was built in node.js & express.js, using mongo as a database.  
+this repository contains a users api that allows authenticated & authorized users to preform CRUD operations against the user models (Students, Instructors, Preceptors, and Administrators). this repository was built in node.js & express.js, using mongo as a database.  
 the repository implements:  
 - json-web-token authentication
 - role based authorization
