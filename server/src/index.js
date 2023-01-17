@@ -16,6 +16,10 @@ const cors = require('cors');
 const app = express();
 
 // connect to mongodb
+mongoose.set('strictQuery', false);
+mongoose.connect(process.env.MONGOOSE_URI)
+    .then((connection) => console.log('successfully connected to the database!'))
+    .catch((error) => console.log(error));
 
 // initialize middleware
 app.use(cors());            // enables cross orgin requests so React.js can communicate with this server
