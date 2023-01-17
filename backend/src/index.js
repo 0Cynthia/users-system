@@ -16,7 +16,6 @@ const cors = require('cors');
 const app = express();
 
 // connect to mongodb
-// mongoose.connect() etc etc
 
 // initialize middleware
 app.use(cors());            // enables cross orgin requests so React.js can communicate with this server
