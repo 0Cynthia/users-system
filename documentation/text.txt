@@ -2,6 +2,20 @@ stuff to document about (we should have done this last semester :0)
 
 Models
 
+2 IDEAS
+
+IDEA 1
+- Have 2 Schemas for weeks
+- 1 being the "master" schema which contains the information specific to each week (really just the checklist information)
+- 1 being the "child" schema which contains all of the shared information for each week (reflection info, student id, preceptor id)
+- When making a child schema, we pull the checklist data out of the corresponding master Models
+
+IDEA 2
+- Just have a normal Week schema that will have fields for all information regarding a week
+- Will have an is_master field that will be a Boolean
+- Create 8 models based on this schema that have is_master set to true
+- When we create a Week to assign to a student, we duplicate this "master" and set is_master to false, filling in the rest of the information (student id and others)
+
 Routers 
 
 Controllers 

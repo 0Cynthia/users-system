@@ -1,22 +1,22 @@
 # Frontend files (why are there so many here)
-/frontend/node_modules
-/frontend/.pnp
-/frontend.pnp.js
-/frontend/coverage
-/frontend/build
-/frontend.DS_Store
-/frontend.env.local
-/frontend.env.development.local
-/frontend.env.test.local
-/frontend.env.production.local
+/client/node_modules
+/client/.pnp
+/client.pnp.js
+/client/coverage
+/client/build
+/client.DS_Store
+/client.env.local
+/client.env.development.local
+/client.env.test.local
+/client.env.production.local
 
-/frontendnpm-debug.log*
-/frontendyarn-debug.log*
-/frontendyarn-error.log*
+/clientnpm-debug.log*
+/clientyarn-debug.log*
+/clientyarn-error.log*
 
 # Backend files
-/backend/node_modules
-/backend/.env
+/server/node_modules
+/server/.env
 
 # Mac specific files
 .DS_Store
