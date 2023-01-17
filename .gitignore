@@ -1,4 +1,4 @@
-# frontend
+# Frontend files (why are there so many here)
 /frontend/node_modules
 /frontend/.pnp
 /frontend.pnp.js
@@ -14,9 +14,9 @@
 /frontendyarn-debug.log*
 /frontendyarn-error.log*
 
-#backend
-# WHY CANT I IGNORE NODE MODULES AND .ENV IN THE BACKEND DIRECTORY 😭
+# Backend files
 /backend/node_modules
 /backend/.env
 
+# Mac specific files
 .DS_Store
