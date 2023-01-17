@@ -1,29 +1,30 @@
 /**
  * this module is the entry point of the applicaiton
  * this module imports all libraries, routers, initializes the appication, and opens the port
- * author:  
+ * author:
  */
 
 // import libraries & routers
-require('dotenv').config({ path: '../.env' });
+require('dotenv').config({ path: '.env' });
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 
-// import routers 
+// import routers
 
-// create an instance of express 
+// create an instance of express
 const app = express();
 
 // connect to mongodb
 mongoose.set('strictQuery', false);
-mongoose.connect(process.env.MONGOOSE_URI)
+mongoose
+    .connect(process.env.MONGOOSE_URI)
     .then((connection) => console.log('successfully connected to the database!'))
     .catch((error) => console.log(error));
 
 // initialize middleware
-app.use(cors());            // enables cross orgin requests so React.js can communicate with this server
-app.use(express.json());    // enables express to parse JSON payloads
+app.use(cors()); // enables cross orgin requests so React.js can communicate with this server
+app.use(express.json()); // enables express to parse JSON payloads
 
 // initialize routers
 
@@ -32,7 +33,7 @@ app.use(express.json());    // enables express to parse JSON payloads
 // hello, world 👋
 app.get('/', (request, response) => {
     response.status(200).json({
-        message: 'hello, world 👋'
+        message: 'hello, world 👋',
     });
 });
 
