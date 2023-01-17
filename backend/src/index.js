@@ -1,7 +1,7 @@
 /**
  * this module is the entry point of the applicaiton
  * this module imports all libraries, routers, initializes the appication, and opens the port
- * author: Refaat
+ * author:  
  */
 
 // import libraries & routers

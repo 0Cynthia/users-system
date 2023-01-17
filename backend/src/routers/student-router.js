@@ -1,6 +1,6 @@
 /**
  * this module exports a router that contains all the endpoints for the Student resource
- * author: Refaat
+ * author:  
  */
 const express = require('express');
 const router = express.Router();
