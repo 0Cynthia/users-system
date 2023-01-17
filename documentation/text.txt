@@ -1,0 +1,10 @@
+stuff to document about (we should have done this last semester :0)
+
+Models
+
+Routers 
+
+Controllers 
+
+Utility 
+
