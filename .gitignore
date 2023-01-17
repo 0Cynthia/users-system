@@ -15,4 +15,6 @@
 /frontendyarn-error.log*
 
 #backend
-backend/node_modules
+# WHY CANT I IGNORE NODE MODULES AND .ENV IN THE BACKEND DIRECTORY 😭
+/backend/node_modules
+/backend/.env
