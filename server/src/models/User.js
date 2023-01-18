@@ -6,6 +6,12 @@
 const mongoose = require('mongoose');
 
 const UserSchema = new mongoose.Schema({
+    // can be a student, instructor, preceptor, or admin applicaitonId
+    applicationId: {
+        type: String,
+        required: [true, 'an application is required']
+    },
+
     // the users legal first name
     firstName: {
         type: String,
@@ -40,15 +46,6 @@ const UserSchema = new mongoose.Schema({
         type: Integer,
         required: [true, 'A role is required!']
     },
-
-    // a list of Week object-id's
-    // represents a one-to-many relationship in which one User can have many Weeks
-    // i (Refaat) think that it should be in a child user model like student or preceptor >:D
-    weeks: [{
-        type: String,
-    }]
-
-    //
 });
 
 
