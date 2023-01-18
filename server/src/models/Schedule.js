@@ -6,6 +6,9 @@
 const mongoose = require('mongoose');
 
 const ScheduleSchema = new mongoose.Schema({
+    // todo: relationships?
+    //
+
     // the sum of all weekly totals
     totalScheduledHours: { Type: Integer},
     totlaActualHours: { Type: Integer},
