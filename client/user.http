@@ -1,0 +1,10 @@
+POST http://localhost:3000/api/users/Student HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "Simon",
+    "lastName": "Dumalski",
+    "preferredName": "Saymoan",
+    "email": "Dumalski.Simon@edu.sait.ca",
+    "password": "password"
+}

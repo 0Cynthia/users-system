@@ -1,48 +1,40 @@
 /**
  * this module exports a router that contains all the endpoints for the User resource
- * author:  
  */
 const express = require('express');
 const router = express.Router();
 
 // import controller functions
+const { getAllUsers, getAllUsersByType, getUserById,
+    createUserByType, updateUser, deleteUser } = require('../controllers/user-controller');
+
+// import schematics
 // import validation functions
-// declare endpoints
 
-//
-router.get('/api/users/admin', (request, response) => {response.send('to be implemented')});
-router.get('/api/users/admin/:id', (request, response) => {response.send('to be implemented')});
-router.post('/api/users/admin', (request, response) => {response.send('to be implemented')});
-router.put('/api/users/admin/:id', (request, response) => {response.send('to be implemented')});
-router.delete('/api/users/admin/:id', (request, response) => {response.send('to be implemented')});
 
-//
-router.get('/api/users/instructor', (request, response) => {response.send('to be implemented')});
-router.get('/api/users/instructor/:id', (request, response) => {response.send('to be implemented')});
-router.post('/api/users/instructor', (request, response) => {response.send('to be implemented')});
-router.put('/api/users/instructor/:id', (request, response) => {response.send('to be implemented')});
-router.delete('/api/users/instructor/:id', (request, response) => {response.send('to be implemented')});
+// this route returns a list of all User objects
+router.get('/api/users', 
+    getAllUsers);
 
-//
-router.get('/api/users/contractInstructor', (request, response) => {response.send('to be implemented')});
-router.get('/api/users/contractInstructor/:id', (request, response) => {response.send('to be implemented')});
-router.post('/api/users/contractInstructor', (request, response) => {response.send('to be implemented')});
-router.put('/api/users/contractInstructor/:id', (request, response) => {response.send('to be implemented')});
-router.delete('/api/users/contractInstructor/:id', (request, response) => {response.send('to be implemented')});
+// this route returns a list of all specified User objects 
+router.get('/api/users/:role/', 
+    getAllUsersByType);
 
-//
-router.get('/api/users/preceptor', (request, response) => {response.send('to be implemented')});
-router.get('/api/users/preceptor/:id', (request, response) => {response.send('to be implemented')});
-router.post('/api/users/preceptor', (request, response) => {response.send('to be implemented')});
-router.put('/api/users/preceptor/:id', (request, response) => {response.send('to be implemented')});
-router.delete('/api/users/preceptor/:id', (request, response) => {response.send('to be implemented')});
+// this route returns a User object specified by a mongodb object id
+router.get('/api/users/:id', 
+    getUserById);
 
-//
-router.get('/api/users/student', (request, response) => {response.send('to be implemented')});
-router.get('/api/users/student/:id', (request, response) => {response.send('to be implemented')});
-router.post('/api/users/student', (request, response) => {response.send('to be implemented')});
-router.put('/api/users/student/:id', (request, response) => {response.send('to be implemented')});
-router.delete('/api/users/student/:id', (request, response) => {response.send('to be implemented')});
+// this creates a new specified user & returns it
+router.post('/api/users/:role/', 
+    createUserByType);
+
+// this route updates a specified user by its mongodb object id & returns it
+router.put('/api/users/:id', 
+    updateUser);
+
+// this route deletes a specified user object & returns it
+router.delete('/api/users/:id', 
+    deleteUser);
 
 
 module.exports = router;

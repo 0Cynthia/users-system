@@ -4,37 +4,17 @@
  * author:
  */
 
-// import libraries & routers
-require('dotenv').config({ path: '.env' });
+// imports 
 const express = require('express');
-const mongoose = require('mongoose');
-const cors = require('cors');
-
-// import routers
-
-// create an instance of express
+const loader = require('./src/utility/loader');
 const app = express();
 
-// connect to mongodb
-mongoose.set('strictQuery', false);
-mongoose
-    .connect(process.env.MONGOOSE_URI)
-    .then((connection) => console.log('successfully connected to the database!'))
-    .catch((error) => console.log(error));
-
-// initialize middleware
-app.use(cors()); // enables cross orgin requests so React.js can communicate with this server
-app.use(express.json()); // enables express to parse JSON payloads
-
-// initialize routers
-
-// initialize error-handling middleware
+// load the web application 🔧
+loader.load(app);
 
 // hello, world 👋
 app.get('/', (request, response) => {
-    response.status(200).json({
-        message: 'hello, world 👋',
-    });
+    response.status(200).json({ message: 'hello, world 👋' });
 });
 
 // open port 🐸

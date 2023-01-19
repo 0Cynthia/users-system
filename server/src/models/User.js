@@ -6,12 +6,6 @@
 const mongoose = require('mongoose');
 
 const UserSchema = new mongoose.Schema({
-    // can be a student, instructor, preceptor, or admin applicaitonId
-    applicationId: {
-        type: String,
-        required: [true, 'an application is required']
-    },
-
     // the users legal first name
     firstName: {
         type: String,
@@ -43,8 +37,8 @@ const UserSchema = new mongoose.Schema({
 
     // the users role; see /server/config/permissions.js for more info
     role: {
-        type: Integer,
-        required: [true, 'A role is required!']
+        type: Number,
+        default: 5     // student
     },
 });
 
