@@ -8,7 +8,6 @@ const User = require('../models/User');
  */
 const getAllUsers = async (request, response) => {
     try {
-        // query the database for all user object
         const users = await User.find();
         return response.status(200).json(users);
     } catch (error) {
@@ -63,20 +62,17 @@ createUserByType = async (request, response, next) => {
 
         // assign a role key in the body object based on the role given in the parameters
         switch (role) {
-            case 'ContractInstructor':
-                body.role = 1;
-                break;
             case 'Administrator':
-                body.role = 2;
+                body.role = 'Administrator';
                 break;
             case 'Instructor':
-                body.role = 3;
+                body.role = 'Instructor';
                 break;
             case 'Preceptor':
-                body.role = 4;
+                body.role = 'Preceptor';
                 break;
             case 'Student':
-                body.role = 5;
+                body.role = 'Student';
                 break;
             default:
                 return response.status(400).json({ message: 'that role does not exist!' });
@@ -96,7 +92,7 @@ createUserByType = async (request, response, next) => {
 updateUser = async (request, response, next) => {
     try {
         // deconstruct user's mongodb object id from parameter list
-        const { id } = request.params;
+        const _id = request.params.id;
         const body = request.body;
 
         // update a specified User
@@ -118,10 +114,10 @@ updateUser = async (request, response, next) => {
 deleteUser = async (request, response, next) => {
     try {
         // deconstruct user's mongodb object id from parameter list
-        const { id } = request.params;
-
+        const _id = request.params.id;
+        console.log(_id)
         // delete the specified User
-        const user = User.findOneAndDelete({ _id });
+        const user = await User.findOneAndDelete({ _id });
 
         // repsond with a message if user is null
         if (!user) return response.status(400).json({ message: 'user does not exist' });

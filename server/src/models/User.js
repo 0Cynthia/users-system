@@ -1,7 +1,7 @@
 /**
  * this module exports a User model
  * this model is the parent of every other User in the applicaiton
- * authors:  
+ * authors: Refaat  
  */
 const mongoose = require('mongoose');
 
@@ -24,6 +24,7 @@ const UserSchema = new mongoose.Schema({
     },
 
     // the users email address
+    // todo: custom validation; verify the email against a regular expression
     email: {
         type: String,
         required: [true, 'An email address is required!']
@@ -36,9 +37,11 @@ const UserSchema = new mongoose.Schema({
     },
 
     // the users role; see /server/config/permissions.js for more info
+    // todo: validation to only accept the roles specified in the documentation
     role: {
-        type: Number,
-        default: 5     // student
+        type: String,
+        required: [true, 'A role is required!'],
+        default: 'Student'
     },
 });
 

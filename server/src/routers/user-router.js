@@ -9,31 +9,41 @@ const { getAllUsers, getAllUsersByType, getUserById,
     createUserByType, updateUser, deleteUser } = require('../controllers/user-controller');
 
 // import schematics
-// import validation functions
+const { UserSchematic } = require('../schematics/user-schematic');
 
+// import validation functions
+const { validateBody } = require('../middleware/validateBody');
+const { validateId } = require('../middleware/validateId');
 
 // this route returns a list of all User objects
-router.get('/api/users', 
+router.get('/api/users',
     getAllUsers);
 
-// this route returns a list of all specified User objects 
-router.get('/api/users/:role/', 
+// this route returns a list of all User objects of a specified role 
+router.get('/api/users/role/:role/',
     getAllUsersByType);
 
 // this route returns a User object specified by a mongodb object id
-router.get('/api/users/:id', 
+router.get('/api/users/:id',
+    validateId,
     getUserById);
 
-// this creates a new specified user & returns it
-router.post('/api/users/:role/', 
+// this creates a new user object of a specified role & returns it
+// this endpoint should only be accessed by admins for their admin work
+// user registration will have its own route the :role logic will be in a jwt signup code
+router.post('/api/users/:role/',
+    validateBody(UserSchematic),
     createUserByType);
 
-// this route updates a specified user by its mongodb object id & returns it
-router.put('/api/users/:id', 
+// this route updates an existing User object by its mongodb object id & returns it
+router.put('/api/users/:id',
+    validateId,
+    validateBody(UserSchematic),
     updateUser);
 
-// this route deletes a specified user object & returns it
-router.delete('/api/users/:id', 
+// this route deletes an existing User object & returns it
+router.delete('/api/users/:id',
+    validateId,
     deleteUser);
 
 

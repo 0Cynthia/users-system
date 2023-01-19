@@ -1,11 +1,14 @@
 /**
  * this module exports a declaration of the web applications permissions/roles as JSON
  * the User models should have a permission/role attribute that contain its respective permission/role
+ * authors: Refaat
  */
-const permissions = {
-    ContractInstructor: 1,
-    Administrator: 2,
-    Instructor: 3,
-    Preceptor: 4,
-    Student: 5,
+const roles = {
+    Administrator: 'Administrator',
+    Instructor: 'Instructor',
+    Preceptor: 'Preceptor',
+    Student: 'Student',
 }
+
+
+module.exports = roles;
