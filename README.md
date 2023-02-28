@@ -15,7 +15,7 @@ This repository contains a users api that allows authenticated & authorized user
 1. node.js must be installed
 2. must have access to a mongodb database (locally or cloud)
 
-**Installation instructions**
+### Installation instructions ###
 1. clone repository
 2. run npm install in the root directory
 3. create a .env file in the root directory
@@ -34,7 +34,7 @@ C:/Users/Refaat/Desktop/users-system> npm install
 MONGODB_URI="mongodb://localhost:27017/yourdatabase"
 ```
 
-**Run instructions**
+### Run instructions ###
 1. change to the src directory
 2. run node .\index.js
 ```
