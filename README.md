@@ -27,8 +27,7 @@ run npm install in the root directory
   C:\Users\Ether> npm install
 ```
 
-creates a .env file in the root directory, and set `MONGODB_URI` to your mongodb connection string
-
+create a .env file in the root directory, and set `MONGODB_URI` to your mongodb connection string.
 import users.json to the database. It is located in `/src/config/users.json`
 
 **Note: all users in the users.json use "Password" as the password**  
