@@ -19,12 +19,12 @@ This repository contains a users api that allows authenticated & authorized user
 ### Installing
 clone repository
 ```
-  C:\Users\Ether> git clone https://github.com/Ether2003/users-system .
+  C:\Users\Cynthia> git clone https://github.com/Ether2003/users-system .
 ```
 
 run npm install in the root directory
 ```
-  C:\Users\Ether> npm install
+  C:\Users\Cynthia> npm install
 ```
 
 create a .env file in the root directory, and set `MONGODB_URI` to your mongodb connection string.
@@ -33,7 +33,7 @@ import users.json to the database. It is located in `/src/config/users.json`
 **Note: all users in the users.json use "Password" as the password**  
 ```
 # running npm install in the root directory...
-C:/Users/Refaat/Desktop/users-system> npm install
+C:/Users/Cynthia/Desktop/users-system> npm install
 ```
 ```
 # example with a local mongodb connection
